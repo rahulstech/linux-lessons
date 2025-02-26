@@ -1,5 +1,7 @@
-# realpath appends the given file or directory name to the current working directory
-# it does not check if the path exists or not
+# realpath resolves the given path. for example
+# realpath /home/username/Desktop/.. = /home/username
+# realpath /home/username/Desktop/folder/ = /home/username/Desktop/folder
+# realpath hello.txt = /home/username/Desktop/hello.txt ( if the current working directory is /home/username/Desktop)
 x=$(realpath $0) # $0 = current file name
 
 if [[ -e $x ]] # -e to check if a path entry exists or not
